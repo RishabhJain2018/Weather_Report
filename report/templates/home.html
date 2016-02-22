@@ -1,9 +1,13 @@
-{}
+{% load staticfiles %}
 <html>
 <head>
 	<title> Weather report </title>
 </head>
-<body style="background-image: url("sky.jpg");">
-
+<body style="{% static 'background-image: url("images/sky.JPG");' %}">
+	<h2> Enter the Name of the City : </h2>
+	<form method="POST">
+		{% csrf_token %}
+		<input type="text" name="city">
+	</form>
 </body>
 </html>
